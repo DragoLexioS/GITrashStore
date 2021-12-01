@@ -1,0 +1,96 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% if form != None %} 
+<br><h2>Пожалуйста заполните анкету</h2><br>
+    <div >
+        <form method="POST" >
+            {% csrf_token %}
+            <label for="{{ form.name.id_for_label}}" >{{form.name.label}}</label>
+            {{form.name}}<br><br>
+            <label for="{{ form.city.id_for_label}}">{{form.city.label}}</label>
+            {{form.city}}<br><br>
+            <label for="{{ form.email.id_for_label}}">{{form.email.label}}</label>
+            {{form.email}}<br><br>
+            <label for="{{ form.play.id_for_label}}">{{form.play.label}}</label>
+            {{form.play}}<br><br>
+            <label for="{{ form.top.id_for_label}}">{{form.top.label}}</label>
+            {{form.top}}<br><br>
+            <label for="{{ form.top2.id_for_label}}">{{form.top2.label}}</label>
+            {{form.top2}}<br><br>
+            <label for="{{ form.notice.id_for_label}}">{{form.notice.label}}</label>
+            {{form.notice}}<br><br>
+            <label for="{{ form.message.id_for_label}}">{{form.message.label}}</label>
+            {{form.message}}<br><br>
+            <input type="submit" value="Отправить" id="in">
+        </form>
+    </div>
+{% else %}
+    <br><h2>Спасибо за Ваш отзыв!</h2><br>
+    <h3>Вы отправили нам следующую информацию:</h3>
+    <ul>
+        <li><span> Ваше имя: </span>{{data.name}}</li>
+        <li><span> Ваш город: </span>{{data.city}}</li>
+        <li><span> Ваш e-mail: </span>{{data.email}}</li>
+        <li><span> Играете ли Вы в игру: </span>{{data.play}}</li>
+        <li><span> Ваша оценка сайта: </span>{{data.top}}</li>
+        <li><span> Ваша оценка разнообразия: </span>{{data.top2}}</li>
+        <li><span> Подписка на рассылку новостей: </span>{{data.notice}}</li>
+        <li><span> Ваши пожелания: </span>{{data.message}}</li>
+    </ul>
+{% endif %}
+<script>
+
+function in_mouseover()
+    {
+    $('#in').css('background-color', 'gold')
+    }
+    $('#in').mouseover(in_mouseover);
+function in_mouseout()
+    {
+    $('#in').css('background-color', 'white')
+    }
+    $('#in').mouseout(in_mouseout);
+function message_focus()
+    {
+        $('#id_message').css('background-color', 'gold')
+    }
+    $('#id_message').focus(message_focus);
+function name_focus()
+    {
+        $('#id_name').css('background-color', 'gold')
+    }
+    $('#id_name').focus(name_focus);
+function city_focus()
+    {
+        $('#id_city').css('background-color', 'gold')
+    }
+    $('#id_city').focus(city_focus);
+function email_focus()
+    {
+    $('#id_email').css('background-color', 'gold')
+    }    
+    $('#id_email').focus(email_focus);
+function message_blur()
+    {
+        $('#id_message').css('background-color', 'white')
+    }
+    $('#id_message').blur(message_blur);
+function name_blur()
+    {
+        $('#id_name').css('background-color', 'white')
+    }
+    $('#id_name').blur(name_blur);
+function city_blur()
+    {
+        $('#id_city').css('background-color', 'white')
+    }
+    $('#id_city').blur(city_blur);
+function email_blur()
+    {
+    $('#id_email').css('background-color', 'white')
+    }    
+    $('#id_email').blur(email_blur);
+
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div style="text-align:center">
+	<a href="https://genshin-impact.fandom.com/ru/wiki/Genshin_Impact_%D0%92%D0%B8%D0%BA%D0%B8" target="_blank"> 
+		<img style="width:250px" src="{% static 'app/content/hutao.png' %}" alt="Logo 1"/></a>
+	<a href="https://genshin.mihoyo.com/ru/home" target="_blank"> <img style="width:250px" src="{% static 'app/content/paimon.png' %}" alt="Logo 2"/></a>
+	<a href="https://vk.com/genshinimpact" target="_blank"> <img style="width:250px" src="{% static 'app/content/ai.png' %}" alt="Logo 3"/></a>
+</div>
+
+{% endblock %}

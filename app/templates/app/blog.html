@@ -1,0 +1,14 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>Новости</h2> <br />
+{% for post in posts %}
+<hr class="hr-vertical-gradient">
+<div class="">
+    <h2 style="color:darkmagenta; font-size:18pt; font-family:'Times New Roman'"> {{post.title}} </h2>
+    <h4 style="font-size:14pt; font-family:'Times New Roman'"> {{post.posted}} </h4>
+    <p style="font-size:14pt; font-family:'Times New Roman'"> {{post.description}} </p>
+    <p><a href="{% url 'blogpost' parametr=post.id %}"> Читать далее </a> </p>
+</div>
+{% endfor %}
+{% endblock %}

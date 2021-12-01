@@ -1,0 +1,59 @@
+body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    background-color:linen;
+    background-image: url('/static/app/content/fon.png');
+    background-size:100%
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+.p3 {font-size:20pt; font-style:italic; color:darkturquoise;}
+.center {text-align:center}
+.p4 {font-size:16pt; text-indent:each-line}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+}
+.hr-vertical-gradient {
+    margin: 20px 0;
+    padding: 0;
+    height: 7px;
+    border: none;
+    background: linear-gradient(180deg, NavajoWhite, brown);
+}
